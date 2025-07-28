@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Azzproject Video Only</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<video autoplay muted playsinline id="vid">
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio autoplay loop id="aud">
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Unmute video audio saat sudah dimuat
+  const vid = document.getElementById('vid');
+  vid.muted = false;
+  vid.play().catch(e => console.log("Video autoplay error:", e));
+</script>
+
+</body>
+</html>
